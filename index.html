@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="normalize.css.css">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slackonarus</title>
+</head>
+<body class="page">
+<header class="header">
+  <img src="./images/header-logo.svg" class="header__logo" alt="Логотип">
+  <h1 class="header__title">Slackonarus — помогает сохранать слаконары в PDF</h1>
+</header>
+<main class="content">
+  <section class="form">
+    <h2 class="form__title">Новый слаконар</h2>
+    <form name="form-add" class="form form_type_add" novalidate>
+      <fieldset class="form__fields">
+        <label class="form__input">
+          <input id="title-input" type="text" name="name" placeholder="Название слаконара"
+                 class="form__field form__field_type_title" minlength="2" maxlength="30" required>
+          <span class="form__field-error title-input-error"></span>
+        </label>
+        <label class="form__input">
+          <input id="title-input" type="text" name="author" placeholder="Имя автора"
+                 class="form__field form__field_type_title" minlength="2" maxlength="30" required>
+          <span class="form__field-error title-input-error"></span>
+        </label>
+        <label class="form__input">
+          <input id="url-input" type="url" name="link" placeholder="Ссылка на первое сообщение"
+                 class="form__field form__field_type_link" required>
+          <span class="form__field-error url-input-error"></span>
+        </label>
+        <label class="form__input">
+          <input id="url-input" type="url" name="link" placeholder="Ссылка на последнее сообщение"
+                 class="form__field form__field_type_link" required>
+          <span class="form__field-error url-input-error"></span>
+        </label>
+        <button type='submit' class="form__submit-button" aria-label="Создать">Создать</button>
+      </fieldset>
+    </form>
+  </section>
+  <section class="card-list">
+    <div class="card">
+      <img src="./images/card-avatar.jpeg" alt="Аватар пользователя" class="card__avatar">
+      <div class="card__text">
+        <p class="card__title">Автор сообщения</p>
+        <p class="card__paragraph">Первое сообщение</p>
+      </div>
+    </div>
+
+    <div class="card card_type_insert">
+      <img src="./images/card-avatar.jpeg" alt="Аватар пользователя" class="card__avatar">
+      <div class="card__text">
+        <p class="card__title">Автор сообщения</p>
+        <p class="card__paragraph">Первое сообщение</p>
+      </div>
+    </div>
+
+  </section>
+</main>
+<footer class="footer">
+  <p class="footer__copyright">© 2022</p>
+</footer>
+<template class="card-template card-template_type_main">
+  <div class="card">
+    <img src="" alt="Аватар пользователя" class="card__avatar">
+    <div class="card__text">
+      <p class="card__title"></p>
+      <p class="card__paragraph"></p>
+    </div>
+  </div>
+</template>
+
+<template class="card-template card-template_type_insert">
+  <div class="card">
+    <img src="" alt="Аватар пользователя" class="card__avatar">
+    <div class="card__text">
+      <p class="card__title"></p>
+      <p class="card__paragraph"></p>
+    </div>
+  </div>
+</template>
+</body>
+</html>
