@@ -1,8 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <link rel="stylesheet" href="normalize.css.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -12,56 +19,58 @@
 <body class="page">
 <header class="header">
   <img src="./images/header-logo.svg" class="header__logo" alt="Логотип">
-  <h1 class="header__title">Slackonarus — помогает сохранать слаконары в PDF</h1>
+  <h1 class="header__title">Slackonarus — save slackonars to PDF</h1>
 </header>
 <main class="content">
-  <section class="form">
+
+  <form>
     <h2 class="form__title">Новый слаконар</h2>
-    <form name="form-add" class="form form_type_add" novalidate>
-      <fieldset class="form__fields">
-        <label class="form__input">
-          <input id="title-input" type="text" name="name" placeholder="Название слаконара"
-                 class="form__field form__field_type_title" minlength="2" maxlength="30" required>
-          <span class="form__field-error title-input-error"></span>
-        </label>
-        <label class="form__input">
-          <input id="title-input" type="text" name="author" placeholder="Имя автора"
-                 class="form__field form__field_type_title" minlength="2" maxlength="30" required>
-          <span class="form__field-error title-input-error"></span>
-        </label>
-        <label class="form__input">
-          <input id="url-input" type="url" name="link" placeholder="Ссылка на первое сообщение"
-                 class="form__field form__field_type_link" required>
-          <span class="form__field-error url-input-error"></span>
-        </label>
-        <label class="form__input">
-          <input id="url-input" type="url" name="link" placeholder="Ссылка на последнее сообщение"
-                 class="form__field form__field_type_link" required>
-          <span class="form__field-error url-input-error"></span>
-        </label>
-        <button type='submit' class="form__submit-button" aria-label="Создать">Создать</button>
-      </fieldset>
-    </form>
-  </section>
-  <section class="card-list">
-    <div class="card">
-      <img src="./images/card-avatar.jpeg" alt="Аватар пользователя" class="card__avatar">
-      <div class="card__text">
-        <p class="card__title">Автор сообщения</p>
-        <p class="card__paragraph">Первое сообщение</p>
+    <div class="row mb-3">
+      <label for="name" class="col-sm-4 col-form-label">Название слаконара</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="name">
       </div>
     </div>
-
-    <div class="card card_type_insert">
-      <img src="./images/card-avatar.jpeg" alt="Аватар пользователя" class="card__avatar">
-      <div class="card__text">
-        <p class="card__title">Автор сообщения</p>
-        <p class="card__paragraph">Первое сообщение</p>
+    <div class="row mb-3">
+      <label for="author" class="col-sm-4 col-form-label">Имя автора</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="author">
       </div>
     </div>
+    <div class="row mb-3">
+      <label for="start" class="col-sm-4 col-form-label">Ссылка на первое сообщение</label>
+      <div class="col-sm-8">
+        <input type="url" class="form-control" id="start">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="end" class="col-sm-4 col-form-label">Ссылка на последнее сообщение</label>
+      <div class="col-sm-8">
+        <input type="url" class="form-control" id="end">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Сгенерировать</button>
+  </form>
+<!--  <section class="card-list">-->
+<!--    <div class="card">-->
+<!--      <img src="./images/card-avatar.jpeg" alt="Аватар пользователя" class="card__avatar">-->
+<!--      <div class="card__text">-->
+<!--        <p class="card__title">Автор сообщения</p>-->
+<!--        <p class="card__paragraph">Первое сообщение</p>-->
+<!--      </div>-->
+<!--    </div>-->
 
-  </section>
+<!--    <div class="card card_type_insert">-->
+<!--      <img src="./images/card-avatar.jpeg" alt="Аватар пользователя" class="card__avatar">-->
+<!--      <div class="card__text">-->
+<!--        <p class="card__title">Автор сообщения</p>-->
+<!--        <p class="card__paragraph">Первое сообщение</p>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </section>-->
 </main>
+
 <footer class="footer">
   <p class="footer__copyright">© 2022</p>
 </footer>
