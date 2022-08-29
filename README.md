@@ -1,1 +1,4 @@
-# slackonarus
+# Slackonarus
+Pet-project. В процессе разработки
+## Функциональность
+Сохранение слаконаров в PDF
