@@ -9,7 +9,13 @@
   font-family: Arial, sans-serif;
   font-weight: bold;
   font-size: 65px;
-  margin: 50px 0 40px 0;
+  margin: 50px 0 15px 0;
+}
+
+.header__author {
+  font-family: Arial, sans-serif;
+  font-size: 35px;
+  margin: 0 0 40px 0;
 }
 
 .card__list {
