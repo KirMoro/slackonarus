@@ -332,7 +332,7 @@ export const replyMessage1 = {
 * треды в сообщении p1660057772213509
 * https://slack.com/api/conversations.replies?channel=C03L9DBH708&ts=1660057772.213509
 * */
-const replyMessage2 = {
+export const replyMessage2 = {
   "ok": true,
   "messages": [
     {
