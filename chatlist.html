@@ -11,48 +11,26 @@
   <h1 class="header__title">Slackonar title</h1>
   <h2 class="header__author">Slackonar author</h2>
 </div>
-<div class="col-md-6 col-lg-7 col-xl-8">
+<div class="col-md-6 col-lg-7 col-xl-8 card__list">
   <ul class="list-unstyled">
-    <li class="d-flex justify-content-between mb-4">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
-           class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
-      <div class="card">
-        <div class="card-header d-flex justify-content-between p-3">
-          <p class="fw-bold mb-0">Brad Pitt</p>
-          <p class="text-muted small mb-0"><i class="far fa-clock"></i> 12 mins ago</p>
-        </div>
-        <div class="card-body">
-          <p class="mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.
-          </p>
-        </div>
-      </div>
-    </li>
+
   </ul>
 </div>
 
 <template id="card-main">
-  <li>
-    <div class="card card_type_inner">
-      <img class="card__avatar" src="" alt="">
-      <div class="card__main">
-        <h3 class="card__title"></h3>
-        <p class="card__text"></p>
+    <li class="card d-flex mb-4">
+      <img src="" alt="avatar"
+           class="card__avatar rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+      <div class="">
+        <div class="card-header d-flex justify-content-between p-3">
+          <p class="card__title fw-bold mb-0"></p>
+          <p class="text-muted small mb-0"><i class="far fa-clock"></i> </p>
+        </div>
+        <div class="card-body">
+          <p class="card__text mb-0"></p>
+        </div>
       </div>
-    </div>
-  </li>
-</template>
-<template id="card-insert">
-  <li>
-    <div class="card card_type_inner">
-      <img class="card__avatar" src="" alt="">
-      <div class="card__main">
-        <h3 class="card__title"></h3>
-        <p class="card__text"></p>
-      </div>
-    </div>
-  </li>
+    </li>
 </template>
 <script type="module" src="index.js"></script>
 <script type="module" src="slackData.js"></script>
