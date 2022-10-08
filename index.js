@@ -7,7 +7,7 @@ const config =
     token: 'some-slack-token', // с каким токеном стучаться
     historyURL: 'api/conversations.history', // pathname для запроса всех сообщений
     repliesURL: 'conversations.replies', // pathname для запроса реплаев
-    userURL: 'users.profile.get'
+    userURL: 'users.profile.get' // pathname для запроса юзеров
   }
 
 const objURL = {
@@ -101,16 +101,18 @@ function getMessages(messagesURL) {
   const parseURL = fakeAPI.setConversationRange(messagesURL); // Парсинг ссылки
   const messagesFromApi = fakeAPI.getAllConversations(parseURL); // Получение основных сообщений
 
+  // Получение реплаев на все сообщения
   const repliesArr = [];
 
   messagesFromApi.forEach((item) => {
     repliesArr.push(fakeAPI.getAllReplies(item.ts))
   });
 
+  // Удаление повторяющихся сообщений
   function filterByProperty(array, propertyName) {
     const occurrences = {}
 
-    return array.filter(function(x) {
+    return array.filter((x) => {
       const property = x[propertyName]
       if (occurrences[property]) {
         return false;
