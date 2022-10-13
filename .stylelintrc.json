@@ -1,0 +1,21 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-idiomatic-order"],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "ignoreFiles": ["vendor/*.css"],
+  "rules": {
+    "import-notation": "url",
+    "selector-class-pattern": null,
+    "property-no-vendor-prefix": null,
+    "value-keyword-case": null,
+    "number-leading-zero": "never",
+    "string-quotes": "single",
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "ignore": ["blockless-after-blockless"]
+      }
+    ]
+  }
+}
