@@ -16,7 +16,7 @@ const runApp = async () => {
 
   const isSetConversation = slackAPI.setConversationRange(objURL);
   if (!isSetConversation) {
-    throw new Error('Ошибка установки tConversationRange');
+    throw new Error('Ошибка установки ConversationRange');
   }
 
   const messages = await slackAPI.getAllConversations();
@@ -70,12 +70,15 @@ const runApp = async () => {
     } else {
       container.append(generateCard(message, usersMap));
 
+      const repliesLi = document.createElement('li');
       const repliesUl = document.createElement('ul');
+      repliesUl.style.paddingLeft = '5rem';
 
-      replies.forEach((replie) => {
-        if (replie.thread_ts === message.thread_ts && replie.text !== message.text) {
-          repliesUl.prepend(generateCard(replie, usersMap));
-          container.append(repliesUl);
+      replies.forEach((reply) => {
+        if (reply.thread_ts === message.thread_ts && reply.text !== message.text) {
+          repliesUl.prepend(generateCard(reply, usersMap));
+          repliesLi.prepend(repliesUl);
+          container.append(repliesLi);
         }
       });
     }

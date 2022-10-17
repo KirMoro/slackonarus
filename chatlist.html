@@ -3,30 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <link href="./chatlist.css" rel="stylesheet">
   <title>Chatlist</title>
 </head>
-<body class="page">
-<div class="header">
+<body class="container bg-light col-sm-12 col-lg-8 col-xl-6">
+<div class="header row mb-4">
   <h1 class="header__title">Slackonar title</h1>
   <h2 class="header__author">Slackonar author</h2>
 </div>
-<div class="col-md-6 col-lg-7 col-xl-8">
-  <ul class="card__list list-unstyled">
-
-  </ul>
+<div class="row">
+  <ul class="card__list list-unstyled"></ul>
 </div>
 
 <template id="card-main">
-    <li class="card d-flex flex-row mb-4">
+    <li class="card d-flex border-0 flex-row mb-4 bg-transparent">
       <img src="" alt="avatar"
-           class="card__avatar rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+           class="card__avatar rounded-circle d-flex align-self-start me-3" width="60">
       <div class="">
-        <div class="card-header d-flex justify-content-between p-3">
+        <div class="d-flex justify-content-between p-3 border-bottom border-dark">
           <p class="card__title fw-bold mb-0"></p>
-          <p class="text-muted small mb-0"><i class="far fa-clock"></i> </p>
+          <p class="text-muted text-sm mb-0"></p>
         </div>
-        <div class="card-body">
+        <div class="card-body bg-white rounded-bottom shadow-sm">
           <p class="card__text mb-0"></p>
         </div>
       </div>
