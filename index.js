@@ -44,6 +44,19 @@ const runApp = async () => {
       }));
   await Promise.all(usersPromise);
 
+  const getTime = (messageTime) => {
+    const millisecondsInSecond = 1000;
+    const milliseconds = messageTime * millisecondsInSecond;
+
+    const newDate = new Date(milliseconds);
+    const minutes = newDate.getMinutes() < 10 ? '0' + newDate.getMinutes() : newDate.getMinutes();
+    const hours = newDate.getHours() < 10 ? '0' + newDate.getHours() : newDate.getHours();
+
+    const timeStamp = `${hours}:${minutes}`;
+    return timeStamp;
+  }
+
+
   const generateCard = (message, usersDataMap) => {
     const cardElement = document
       .querySelector('#card-main')
@@ -54,10 +67,12 @@ const runApp = async () => {
     const cardTitle = cardElement.querySelector('.card__title');
     const cardText = cardElement.querySelector('.card__text');
     const cardAvatar = cardElement.querySelector('.card__avatar');
+    const cardTime = cardElement.querySelector('.card__time');
 
     cardTitle.textContent = usersDataMap.get(message.user).display_name;
     cardText.textContent = message.text;
     cardAvatar.src = usersDataMap.get(message.user).image_original;
+    cardTime.textContent = getTime(message.ts);
 
     return cardElement;
   };
@@ -72,7 +87,9 @@ const runApp = async () => {
 
       const repliesLi = document.createElement('li');
       const repliesUl = document.createElement('ul');
-      repliesUl.style.paddingLeft = '5rem';
+
+      repliesLi.classList.add("d-flex", "list-group-item", "border", "border-0", "px-0", "bg-transparent");
+      repliesUl.classList.add('list-group', 'list-group-flush', 'ms-5');
 
       replies.forEach((reply) => {
         if (reply.thread_ts === message.thread_ts && reply.text !== message.text) {
