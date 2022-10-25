@@ -1,5 +1,5 @@
 import { faker } from 'https://cdn.skypack.dev/@faker-js/faker';
-import { messages, replyMessage1, replyMessage2 } from './slackData.js';
+import { messages, replyMessage1, replyMessage2 } from './__fixtures__/slackData.js';
 
 export class FakeSlackAPI {
   constructor(config) {

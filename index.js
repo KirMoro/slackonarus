@@ -1,4 +1,6 @@
 import { FakeSlackAPI } from './FakeSlackAPI.js';
+// import { DateTime } from "luxon";
+
 
 const config = {
   url: 'https://slack.com/api/', // куда стучаться за данными
@@ -49,13 +51,12 @@ const runApp = async () => {
     const milliseconds = messageTime * millisecondsInSecond;
 
     const newDate = new Date(milliseconds);
-    const minutes = newDate.getMinutes() < 10 ? '0' + newDate.getMinutes() : newDate.getMinutes();
-    const hours = newDate.getHours() < 10 ? '0' + newDate.getHours() : newDate.getHours();
+    const minutes = newDate.getMinutes() < 10 ? `0${newDate.getMinutes()}` : newDate.getMinutes();
+    const hours = newDate.getHours() < 10 ? `0${newDate.getHours()}` : newDate.getHours();
 
     const timeStamp = `${hours}:${minutes}`;
     return timeStamp;
-  }
-
+  };
 
   const generateCard = (message, usersDataMap) => {
     const cardElement = document
@@ -88,7 +89,7 @@ const runApp = async () => {
       const repliesLi = document.createElement('li');
       const repliesUl = document.createElement('ul');
 
-      repliesLi.classList.add("d-flex", "list-group-item", "border", "border-0", "px-0", "bg-transparent");
+      repliesLi.classList.add('d-flex', 'list-group-item', 'border', 'border-0', 'px-0', 'bg-transparent');
       repliesUl.classList.add('list-group', 'list-group-flush', 'ms-5');
 
       replies.forEach((reply) => {
