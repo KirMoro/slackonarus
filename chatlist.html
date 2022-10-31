@@ -6,27 +6,13 @@
   <title>Chatlist</title>
 </head>
 <body class="container bg-light col-sm-12 col-lg-8 col-xl-6">
-<div class="header ms-3">
+<div class="ms-3">
   <h1 class="header__title">Slackonar title</h1>
   <h2 class="header__author">Slackonar author</h2>
 </div>
-  <ul class="card__list list-group list-group-flush px-3"></ul>
-<template id="card-main">
-    <li class="card d-flex list-group-item border border-0 flex-row mb-4 bg-transparent py-1 px-0">
-      <img src="" alt="avatar"
-           class="card__avatar rounded-circle d-flex align-self-start me-2 shadow-sm" width="40">
-      <div class="borded-0 shadow-sm">
-        <div class="card-header d-flex justify-content-between bg-transparent">
-          <p class="card__title fw-bold mb-0"></p>
-          <p class="card__time text-muted text-sm mb-0"></p>
-        </div>
-        <div class="card-body py-2 rounded-bottom shadow-sm">
-          <p class="card__text mb-0"></p>
-        </div>
-      </div>
-    </li>
-</template>
+  <ul class="list-group list-group-flush px-3"></ul>
 <script type="module" src="index.js"></script>
+<script type="module" src="luxon.js"></script>
 <script type="module" src="__fixtures__/slackData.js"></script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 import { FakeSlackAPI } from './FakeSlackAPI.js';
-// import { DateTime } from "luxon";
-
+import { card } from './card.js';
 
 const config = {
   url: 'https://slack.com/api/', // куда стучаться за данными
@@ -46,45 +45,13 @@ const runApp = async () => {
       }));
   await Promise.all(usersPromise);
 
-  const getTime = (messageTime) => {
-    const millisecondsInSecond = 1000;
-    const milliseconds = messageTime * millisecondsInSecond;
-
-    const newDate = new Date(milliseconds);
-    const minutes = newDate.getMinutes() < 10 ? `0${newDate.getMinutes()}` : newDate.getMinutes();
-    const hours = newDate.getHours() < 10 ? `0${newDate.getHours()}` : newDate.getHours();
-
-    const timeStamp = `${hours}:${minutes}`;
-    return timeStamp;
-  };
-
-  const generateCard = (message, usersDataMap) => {
-    const cardElement = document
-      .querySelector('#card-main')
-      .content
-      .querySelector('.card')
-      .cloneNode(true);
-
-    const cardTitle = cardElement.querySelector('.card__title');
-    const cardText = cardElement.querySelector('.card__text');
-    const cardAvatar = cardElement.querySelector('.card__avatar');
-    const cardTime = cardElement.querySelector('.card__time');
-
-    cardTitle.textContent = usersDataMap.get(message.user).display_name;
-    cardText.textContent = message.text;
-    cardAvatar.src = usersDataMap.get(message.user).image_original;
-    cardTime.textContent = getTime(message.ts);
-
-    return cardElement;
-  };
-
   messages.forEach((message) => {
-    const container = document.querySelector('.card__list');
+    const container = document.querySelector('.list-group');
 
     if (message.reply_count === 0) {
-      container.append(generateCard(message, usersMap));
+      container.append(card(message, usersMap));
     } else {
-      container.append(generateCard(message, usersMap));
+      container.append(card(message, usersMap));
 
       const repliesLi = document.createElement('li');
       const repliesUl = document.createElement('ul');
@@ -94,7 +61,7 @@ const runApp = async () => {
 
       replies.forEach((reply) => {
         if (reply.thread_ts === message.thread_ts && reply.text !== message.text) {
-          repliesUl.prepend(generateCard(reply, usersMap));
+          repliesUl.prepend(card(reply, usersMap));
           repliesLi.prepend(repliesUl);
           container.append(repliesLi);
         }

@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
@@ -15,15 +14,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Slackonarus</title>
 </head>
-<body class="page">
-<header class="header">
-  <img src="./images/header-logo.svg" class="header__logo" alt="Логотип">
-  <h1 class="header__title">Slackonarus — save slackonars to PDF</h1>
+<body class="container bg-light col-sm-12 col-lg-8 col-xl-6">
+<header>
+  <h1 class="display-2">Slackonarus</h1>
+  <p class="display-5">Save slackonars to PDF</p>
 </header>
-<main class="content">
-
-  <form action="" class="form">
-    <h2 class="form__title">Новый слаконар</h2>
+<main>
+  <form action="" class="form-group bg-info p-3">
+    <h2 class="h3">Новый слаконар</h2>
     <div class="row mb-3">
       <label for="name" class="col-sm-4 col-form-label">Название слаконара</label>
       <div class="col-sm-8">
@@ -50,47 +48,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Сгенерировать</button>
   </form>
-<section class="card__list">
-</section>
 </main>
-
-
-
-<footer class="footer">
-  <p class="footer__copyright">© 2022</p>
-</footer>
-<!--<template id="card-main" class="card-template card-template_type_main">-->
-<!--  <div class="card mb-4 bg-light" style="max-width: 900px;">-->
-<!--    <div class="row g-0 d-flex flex-wrap align-items-center">-->
-<!--      <div class="col-md-2">-->
-<!--        <img src="" class="img-fluid rounded-circle img-thumbnail card-avatar" style="max-width: 110px;" alt="...">-->
-<!--      </div>-->
-<!--      <div class="col-md-10">-->
-<!--        <div class="card-body">-->
-<!--          <h5 class="card-title"></h5>-->
-<!--          <p class="card-text"></p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</template>-->
-
-<!--<template id="card-insert" class="card-template card-template_type_insert">-->
-<!--  <div class="mx-5 card mb-4 bg-light" style="max-width: 540px;">-->
-<!--    <div class="row g-0 d-flex flex-wrap align-items-center">-->
-<!--      <div class="col-md-3">-->
-<!--        <img src="" class="img-fluid rounded-circle img-thumbnail card-avatar" alt="...">-->
-<!--      </div>-->
-<!--      <div class="col-md-9">-->
-<!--        <div class="card-body">-->
-<!--          <h5 class="card-title"></h5>-->
-<!--          <p class="card-text"></p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</template>-->
-<!--<script type="module" src="index.js"></script>-->
-<!--<script type="module" src="slackData.js"></script>-->
 </body>
 </html>
