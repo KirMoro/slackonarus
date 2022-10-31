@@ -36,17 +36,12 @@ export const card = (cardData, userData) => {
     const cardText = document.createElement('p');
     cardText.className = 'mb-0';
     cardText.textContent = message;
-    cardBodyDiv.appendChild(cardText);
+    cardBodyDiv.append(cardText);
   });
 
-  cardAuthorDiv.appendChild(cardAuthorTitle);
-  cardAuthorDiv.appendChild(cardTime);
-
-  cardDiv.appendChild(cardAuthorDiv);
-  cardDiv.appendChild(cardBodyDiv);
-
-  cardElement.appendChild(cardImg);
-  cardElement.appendChild(cardDiv);
+  cardAuthorDiv.append(cardAuthorTitle, cardTime);
+  cardDiv.append(cardAuthorDiv, cardBodyDiv);
+  cardElement.append(cardImg, cardDiv);
 
   return cardElement;
 };
