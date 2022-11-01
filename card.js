@@ -25,7 +25,7 @@ export const card = (cardData, userData) => {
   cardTime.className = 'text-muted small mb-0 ps-4';
 
   const millisecondsInSecond = 1000;
-  const milliseconds = cardData.ts * millisecondsInSecond;
+  const milliseconds = parseFloat(cardData.ts) * millisecondsInSecond;
   cardTime.textContent = DateTime.fromMillis(milliseconds).toLocaleString(DateTime.TIME_24_SIMPLE);
 
   const cardBodyDiv = document.createElement('div');
